@@ -1,5 +1,9 @@
 # LSTM-CRF
 
+## Modification
+
+- in `hybrid_tagger.py`, fixed bugs with `FLAGS`
+
 ## Introduction
 
 An implementation of LSTM+CRF model for Sequence labeling tasks. Based on Tensorflow(>=r1.1), and support multiple architecture like LSTM+CRF, BiLSTM+CRF, and combination of character-level CNN and BiLSTM+CRF.
