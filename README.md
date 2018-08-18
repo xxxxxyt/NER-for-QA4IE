@@ -5,6 +5,9 @@
 - ~~prepare datasets~~
 - train models
 - infer on QA4IE benchmark
+    - interface
+    - POS and chunk tagging
+    - train without POS and chunk tagging
 
 ## Interface
 
