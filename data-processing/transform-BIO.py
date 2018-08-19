@@ -9,7 +9,10 @@ def transform(ifile, ofile):
 			if len(line) == 0:
 				prev = 'O'
 				writer.write('\n')
+				counter = 0
 				continue
+			else:
+				counter = counter + 1
 
 			tokens = line.split()
 			# print tokens
@@ -21,19 +24,19 @@ def transform(ifile, ofile):
 					label = 'B-' + label[2:]
 				else:
 					label = label
-			writer.write(tokens[0] + ' ' + label)
+			writer.write(str(counter) + " " + " ".join(tokens[:-1]) + " " + label)
 			writer.write('\n')
 			prev = tokens[-1]
 
-# eng.train => eng.train.bio.conll
-ifs = "eng.train"
-ofs = "eng.train.bio.conll"
+# eng.train => eng.train.bioes.conll
+ifs = "english/eng.train"
+ofs = "english/eng.train.bioes.conll"
 transform(ifs, ofs)
-# eng.testa => eng.dev.bio.conll
-ifs = "eng.testa"
-ofs = "eng.dev.bio.conll"
+# eng.testa => eng.dev.bioes.conll
+ifs = "english/eng.testa"
+ofs = "english/eng.dev.bioes.conll"
 transform(ifs, ofs)
-# eng.testb => eng.test.bio.conll
-ifs = "eng.testb"
-ofs = "eng.test.bio.conll"
+# eng.testb => eng.test.bioes.conll
+ifs = "english/eng.testb"
+ofs = "english/eng.test.bioes.conll"
 transform(ifs, ofs)
