@@ -1,3 +1,5 @@
+import os
+
 from model.data_utils import CoNLLDataset
 from model.ner_model import NERModel
 from model.config import Config
@@ -23,4 +25,5 @@ def main():
     model.train(train, dev)
 
 if __name__ == "__main__":
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     main()

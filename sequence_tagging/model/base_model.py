@@ -147,3 +147,4 @@ class BaseModel(object):
         msg = " - ".join(["{} {:04.2f}".format(k, v)
                 for k, v in metrics.items()])
         self.logger.info(msg)
+
